@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+
+    <div id="mobile-popup" style="display:none;">
+        <div class="popup-content">
+            <img src="src/work-in-progress.png" alt="Logo" class="popup-logo">
+            <p>This website is best viewed on a desktop. I'm working on making on it make it mobile responsive</p>
+
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+    
     
 
 
@@ -609,6 +620,18 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('mobile-popup');
+            popup.style.display = 'flex';
+        
+            const closeBtn = document.getElementById('close-popup');
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
         });
 
     </script>
